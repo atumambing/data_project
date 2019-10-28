@@ -22,12 +22,16 @@ ActiveRecord::Schema.define(version: 2019_10_23_221541) do
   create_table "books", force: :cascade do |t|
     t.integer "book_id"
     t.string "title"
-    t.integer "author_id"
-    t.integer "publisher_id"
-    t.integer "category_id"
-    t.integer "superhero_id"
+    t.integer "author_id", null: false
+    t.integer "publisher_id", null: false
+    t.integer "category_id", null: false
+    t.integer "superhero_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_id"], name: "index_books_on_author_id"
+    t.index ["category_id"], name: "index_books_on_category_id"
+    t.index ["publisher_id"], name: "index_books_on_publisher_id"
+    t.index ["superhero_id"], name: "index_books_on_superhero_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -45,10 +49,12 @@ ActiveRecord::Schema.define(version: 2019_10_23_221541) do
   end
 
   create_table "superheros", force: :cascade do |t|
-    t.integer "superhero"
+    t.integer "superhero_id"
     t.string "superhero_name"
+    t.integer "superpower_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["superpower_id"], name: "index_superheros_on_superpower_id"
   end
 
   create_table "superpowers", force: :cascade do |t|
@@ -58,4 +64,9 @@ ActiveRecord::Schema.define(version: 2019_10_23_221541) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "books", "authors"
+  add_foreign_key "books", "categories"
+  add_foreign_key "books", "publishers"
+  add_foreign_key "books", "superheros"
+  add_foreign_key "superheros", "superpowers"
 end

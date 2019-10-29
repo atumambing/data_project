@@ -10,6 +10,14 @@
   </head>
 
   <body>
+  <div id="top_menu">
+    <tr>
+      <td><%= link_to 'Home', root_path %></td>
+      <td><%= link_to 'About', new_about_path %></td>
+    </tr>
+  </div>
+
+
     <%= yield %>
   </body>
 </html>

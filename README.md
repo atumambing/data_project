@@ -29,17 +29,17 @@ The first part involves creating the required database tables and pulling data f
 
 /💡 1.6 - Add two or more appropriate validations to all of your ActiveRecord models to ensure that the data you import into your tables will be valid.
 
-1.7 - Write the seeds.rb script to pull in the data from your various sources into your database. You can use Faker as one of your data sources. Multiple endpoints from the same API are considered a single source. (Minimum number of rows across all tables: 200)
+/1.7 - Write the seeds.rb script to pull in the data from your various sources into your database. You can use Faker as one of your data sources. Multiple endpoints from the same API are considered a single source. (Minimum number of rows across all tables: 200)
 
 	🕯️ 1.7 Data is pulled from a single data source.
-	💡 1.7 Data is pulled from a two data sources.
-  	🔥 1.7 Data is pulled from from three or more data sources.
+	/💡 1.7 Data is pulled from a two data sources.
+	🔥 1.7 Data is pulled from from three or more data sources.
 
 2 - Web Site Navigation
 
-🕯️ 2.1 - Your web application has an about page that includes the details about your data sources from 1.1 and optionally your ERD from 1.2.
+/️ 2.1 - Your web application has an about page that includes the details about your data sources from 1.1 and optionally your ERD from 1.2.
 
-💡 2.2 - There is a menu present on all pages that includes links to two or more locations. (For example, a menu with a link to your homepage and your about page.)
+/ 2.2 - There is a menu present on all pages that includes links to two or more locations. (For example, a menu with a link to your homepage and your about page.)
 
 3 - Data Navigation
 

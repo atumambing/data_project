@@ -1,2 +1,14 @@
 <h1>Category#categories</h1>
-<p>Find me in app/views/category/categories.html.erb</p>
+<table>
+
+  <tr>
+    <th>Types of categories</th>
+  </tr>
+
+  <% @categories.each do |c| %>
+  <tr>
+    <td><%= c.category_name%></td>
+  </tr>
+<% end %>
+
+</table>

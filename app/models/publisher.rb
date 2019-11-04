@@ -3,5 +3,4 @@ class Publisher < ApplicationRecord
 
   belongs_to :books
 
-  validates :publisher_name, presence: true
 end

@@ -9,5 +9,4 @@ class Book < ApplicationRecord
   belongs_to :superheros
   belongs_to :authors
 
-  validates :title, presence: true 
 end

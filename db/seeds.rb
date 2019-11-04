@@ -1,11 +1,20 @@
 require 'faker'
 require 'csv'
 
-CSV.foreach(Rails.root.join('lib/heroes_csv.csv'), headers: true) do |row|
-  Book.create({
-    title: row[5]
-    })
-  end
+csv_text = File.read(Rails.root.join('lib/heroes_csv.csv'))
+csv = CSV.parse(csv_text, :headers => true)
+
+
+#csv.each 5.times do |row|
+  #  s = Superhero.new
+  #  s.superhero_name = row[1]
+  #end
+
+1.times do
+  Superhero.create(
+    superhero_name: Faker::Superhero.name
+  )
+end
 
 1.times do
   Category.create(
@@ -26,7 +35,7 @@ end
 end
 
 1.times do
-  Author.create(
-    author_name: Faker::Book.author
-  )
+  Book.create([{
+    title: Faker::DcComics.title,
+  }])
 end

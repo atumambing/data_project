@@ -1,5 +1,16 @@
 <h1>Comic book stuff</h1>
+<table>
 
-<% @titles.each do |title| %>
-  <p><%= title.name%></p>
+  <tr>
+    <th>Title</th>
+    <th>Superhero</th>
+  </tr>
+
+  <% @books.each do |book| %>
+  <tr>
+    <td><%= book.title%></td>
+
+  </tr>
 <% end %>
+
+</table>
